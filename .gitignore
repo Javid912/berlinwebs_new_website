@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 *.log
 tmp/
-prompt_ilu.md
-gen_illustration.js
-assets/illustrations-original.js
+
+# Unredacted original (real customer names + personal email) — the
+# redacted copy used on the live site lives in site/assets/images/cleany/
+source/cleany-screenshots-original/07-admin.png
