@@ -3,19 +3,21 @@ name: Build & Deploy
 # `check` runs on every push and PR — it catches two ways the site can
 # drift: a page rebuilt from build/pages/ that nobody committed, or a
 # hand-edit made directly to a generated file under site/ instead of to
-# its source in build/pages/. `deploy` runs on push to main (the real
-# deploy), and also on a manual "Run workflow" dispatch from any branch
-# — useful for testing the SFTP connection against a scratch
-# STRATO_SFTP_REMOTE_PATH before main ever points at the live one.
+# its source in build/pages/. `deploy` only runs on push to main, and
+# only if `check` passes.
+#
+# Confirmed working 2026-09-08 by temporarily adding
+# feature/hero-illustration to the branches list below, pushing, and
+# watching it deploy to the scratch STRATO_SFTP_REMOTE_PATH
+# (/new_berlinwebs_website) — that's the pattern to repeat for any
+# future one-off test before this file exists on main. Once this has
+# been merged to main once, `workflow_dispatch:` becomes usable instead
+# (GitHub only allows manually dispatching a workflow that's already
+# registered on the default branch, which blocked using it for this
+# first test).
 on:
   push:
-    # TEMP: feature/hero-illustration added only to test-fire the SFTP
-    # deploy against the scratch STRATO_SFTP_REMOTE_PATH before merging
-    # to main — see TODO in README, remove this branch once merged.
-    # (workflow_dispatch would be the cleaner way to do this, but GitHub
-    # only allows manually dispatching a workflow that's already
-    # registered on the default branch, which this isn't yet.)
-    branches: [main, feature/hero-illustration]
+    branches: [main]
   pull_request:
 
 jobs:
@@ -27,7 +29,7 @@ jobs:
 
   deploy:
     needs: check
-    if: github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
