@@ -6,12 +6,7 @@ Static website for BerlinWebs (Berlin — custom software & automation, plus web
 
 **`site/` is the complete deploy folder** — everything the server needs, nothing it doesn't. Hosted on **STRATO Hosting Pro**, not a git-connected platform, so "deploy" means syncing `site/` onto the webspace over SFTP.
 
-Pushing to **`main`** (the default branch) does this automatically via `.github/workflows/deploy.yml`: a `check` job rebuilds every page from source and fails the run if the result wouldn't match what's committed under `site/` (catching a stale build or a hand-edit made directly to a generated file), then a `deploy` job SFTP-uploads `site/` to STRATO. One-time setup before it can deploy — full steps are in the comments at the top of that file:
-
-1. In the STRATO Kundenlogin, under your package → "Datenbanken und Webspace" → "SFTP & SSH", create an SFTP access and note its host/port/username.
-2. Add 4 repo secrets (Settings → Secrets and variables → Actions) — never in this file or in chat: `STRATO_SFTP_HOST`, `STRATO_SFTP_USERNAME`, `STRATO_SFTP_PASSWORD`, `STRATO_SFTP_REMOTE_PATH`.
-
-Until those are set, pushes to `main` will build-check successfully but the deploy step will fail; that's expected, not a bug. (The workflow comments also cover switching from a password to an SSH key later, which STRATO supports and is more secure.)
+Pushing to **`main`** (the default branch) does this automatically via `.github/workflows/deploy.yml`: a `check` job rebuilds every page from source and fails the run if the result wouldn't match what's committed under `site/` (catching a stale build or a hand-edit made directly to a generated file), then a `deploy` job SFTP-uploads `site/` to STRATO. **Live and confirmed working as of 2026-09-08** — the STRATO SFTP access (`SFTP & SSH` in the Kundenlogin) is chrooted to the webspace folder that serves berlinwebs.de, so `STRATO_SFTP_REMOTE_PATH` is simply `/`; the other 3 secrets (`STRATO_SFTP_HOST`, `STRATO_SFTP_USERNAME`, `STRATO_SFTP_PASSWORD`) are that access's own connection details. See the comments at the top of the workflow file for the full one-time setup, including the optional (more secure) switch from a password to an SSH key.
 
 Everything outside `site/` (`build/`, `source/`, this README) is project source/tooling and is not deployed.
 
@@ -125,12 +120,13 @@ Positioning: software/automation studio first (custom web apps, backends, data m
 
 Design system is deliberately simple (dark/light theme, Barlow + Barlow Condensed) and meant to be revisited once a final redesign is ready — but the content and structure are the real site, not a placeholder.
 
+`main` is the only branch (an earlier `feature/hero-illustration` branch — where this rebuild actually happened — was merged and deleted once it was live). GitHub Pages, which was enabled on this repo but unused and unrelated to the real deployment (serving a Jekyll-rendered README at a `github.io` URL), has been disabled.
+
 ## To do
 
-- [ ] **Legal pages** — full review of Impressum/Datenschutz + `en/legal-notice`/`en/privacy-policy` (VAT ID, any other details beyond the Geschäftsführer→Inhaber fix already made).
-- [ ] **STRATO deploy secrets** — add `STRATO_SFTP_HOST`/`STRATO_SFTP_USERNAME`/`STRATO_SFTP_PASSWORD`/`STRATO_SFTP_REMOTE_PATH` as repo secrets, verify the first real deploy from `main`. Optional hardening after that: switch to SSH-key auth (see comments in `.github/workflows/deploy.yml`).
-- [ ] **Merge `feature/hero-illustration` → `main`**, delete the old branch, once reviewed.
+- [ ] **Berlin address / Frankfurt office** — URGENT, already live: the site that was live before this rebuild had a *different* Berlin address (Pallasstr. 13, 10781) and a *second office in Frankfurt* (Neue Rothofstraße 13-19, 60313, +49 69 586 09 160), neither of which carried over — the current Impressum/Legal Notice only lists Wilmersdorfer Str. 22, 10585 Berlin. Confirm which is actually correct (offices may have genuinely changed) and fix the live Impressum/Datenschutz + EN counterparts accordingly.
+- [ ] **Legal pages** — full review beyond the address question and the Geschäftsführer→Inhaber fix already made (VAT ID, anything else).
 - [ ] **Team photo** — About section's placeholder was removed rather than shipped; add a real one when available (see "Adding new images").
 - [ ] **Cleany24 testimonial** — ask the client for a written quote + LinkedIn recommendation.
 - [ ] **Second reference project** — one real case study is doing a lot of work on the site; a second (even an unpaid internal tool, labelled as such) would help.
-- [ ] Repo-root clutter — `BerlinWebs Website Suggestions.html`, `style .rtf` — decide keep/gitignore/delete.
+- [ ] **STRATO SSH-key auth** — optional hardening, swap the password secret for an SSH key (see comments in `.github/workflows/deploy.yml`).

@@ -4,6 +4,10 @@ node_modules/
 tmp/
 .monomind/
 
+# Personal reference material, not part of the site or its source
+BerlinWebs Website Suggestions.html
+style .rtf
+
 # Unredacted original (real customer names + personal email) — the
 # redacted copy used on the live site lives in site/assets/images/cleany/
 source/cleany-screenshots-original/07-admin.png
