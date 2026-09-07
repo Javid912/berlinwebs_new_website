@@ -1,0 +1,77 @@
+name: Build & Deploy
+
+# `check` runs on every push and PR — it catches two ways the site can
+# drift: a page rebuilt from build/pages/ that nobody committed, or a
+# hand-edit made directly to a generated file under site/ instead of to
+# its source in build/pages/. `deploy` runs on push to main (the real
+# deploy), and also on a manual "Run workflow" dispatch from any branch
+# — useful for testing the SFTP connection against a scratch
+# STRATO_SFTP_REMOTE_PATH before main ever points at the live one.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node build/build.js --check
+
+  deploy:
+    needs: check
+    if: github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main' && github.event_name == 'push')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # STRATO Hosting Pro — no build artifact to publish, just sync
+      # site/ (the deploy folder — see README) onto the webspace over
+      # SFTP. STRATO's own guidance is "SFTP, not plain FTP" (see
+      # https://www.strato.de/faq/hosting/so-nutzen-sie-ihren-ssh-sftp-zugang/),
+      # so this uses SFTP rather than FTP/FTPS.
+      #
+      # One-time setup, before this job can succeed:
+      #
+      # 1. STRATO Kundenlogin → your package → "Datenbanken und Webspace"
+      #    → "SFTP & SSH" → create an access. Note the three values
+      #    shown there: host (looks like 50xxxxxx03.ssh.w2.strato.hosting),
+      #    port (22), and username (looks like su15xxx9) — copy them
+      #    exactly, they're account-specific.
+      #    https://www.strato.de/faq/hosting/so-verbinden-sie-sich-mit-dem-strato-sftp-server/
+      #
+      # 2. Add these as repo secrets (Settings → Secrets and variables →
+      #    Actions → New repository secret) — never put them in this
+      #    file or in chat:
+      #      STRATO_SFTP_HOST          from step 1
+      #      STRATO_SFTP_USERNAME      from step 1
+      #      STRATO_SFTP_PASSWORD      the password you set for that access
+      #      STRATO_SFTP_REMOTE_PATH   the path on the server that serves
+      #                                berlinwebs.de — if the SFTP access's
+      #                                "start directory" is already set to
+      #                                the domain root, this is just "/".
+      #
+      # 3. (Optional, more secure, do this "later" like the legal-pages
+      #    review) Switch from a password secret to an SSH key: create
+      #    the access as type "SFTP + SSH" instead, generate a key pair,
+      #    upload the public key to .ssh/authorized_keys on the webspace
+      #    via one manual SFTP connection, then replace `password:` below
+      #    with `ssh_private_key: ${{ secrets.STRATO_SFTP_SSH_KEY }}` and
+      #    drop the password secret entirely.
+      #    https://www.strato.de/faq/hosting/so-nutzen-sie-ihren-ssh-sftp-zugang/
+      - name: Deploy over SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          server: ${{ secrets.STRATO_SFTP_HOST }}
+          port: 22
+          username: ${{ secrets.STRATO_SFTP_USERNAME }}
+          password: ${{ secrets.STRATO_SFTP_PASSWORD }}
+          local_path: "./site/*"
+          remote_path: ${{ secrets.STRATO_SFTP_REMOTE_PATH }}
+          sftp_only: true
+          # Leave files removed from the repo sitting on the server for
+          # now rather than auto-deleting remote files — flip to `true`
+          # once the pipeline's been trusted for a while.
+          delete_remote_files: false

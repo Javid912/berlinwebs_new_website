@@ -401,7 +401,7 @@ form.contact-form{border:1px solid var(--border);border-radius:var(--radius);pad
 
 /* ---------- Logo ---------- */
 .logo-img{height:40px;width:auto;display:block}
-.footer-logo-img{height:44px;width:auto;display:block;opacity:.9;filter:var(--logo-filter)}
+.footer-logo-img{height:53px;width:auto;display:block;opacity:.9;filter:var(--logo-filter)}
 .brand-mark{filter:var(--logo-filter)}
 
 /* ---------- Theme toggle ---------- */

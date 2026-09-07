@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://berlinwebs.de/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/kontakt/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/kontakt/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/contact/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/contact/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/contact/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/kontakt/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/leistungen/individuelle-software/index.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/individuelle-software/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/custom-software/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/services/custom-software/index.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/custom-software/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/individuelle-software/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/leistungen/website-e-commerce/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/website-e-commerce/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/website-ecommerce/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/services/website-ecommerce/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/website-ecommerce/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/website-e-commerce/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/leistungen/branding/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/branding/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/branding/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/services/branding/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/branding/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/branding/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/leistungen/seo-sea/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/seo-sea/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/seo-sea/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/services/seo-sea/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/seo-sea/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/seo-sea/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/leistungen/analyse/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/analyse/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/analytics/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/services/analytics/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/analytics/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/analyse/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/leistungen/social-media/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/social-media/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/social-media/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/services/social-media/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/services/social-media/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/leistungen/social-media/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/impressum/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/impressum/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/legal-notice/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/legal-notice/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/legal-notice/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/impressum/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/datenschutz/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/datenschutz/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/privacy-policy/index.html"/>
+  </url>
+  <url>
+    <loc>https://berlinwebs.de/en/privacy-policy/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berlinwebs.de/en/privacy-policy/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://berlinwebs.de/datenschutz/index.html"/>
+  </url>
+</urlset>

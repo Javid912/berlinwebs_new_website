@@ -1,0 +1,10 @@
+# Canonicalize the domain: berlinwebs.de is the primary domain.
+# Redirects berlinwebs.com and www.berlinwebs.de to berlinwebs.de
+# (avoids duplicate-content issues with search engines).
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^(www\.)?berlinwebs\.com$ [NC]
+RewriteRule ^(.*)$ https://berlinwebs.de/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.berlinwebs\.de$ [NC]
+RewriteRule ^(.*)$ https://berlinwebs.de/$1 [R=301,L]

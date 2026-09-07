@@ -1,0 +1,122 @@
+[
+  {
+    "src": "datenschutz/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/privacy-policy/index.html"
+  },
+  {
+    "src": "en/contact/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "kontakt/index.html"
+  },
+  {
+    "src": "en/index.html",
+    "lang": "en",
+    "home": true,
+    "alt": "index.html"
+  },
+  {
+    "src": "en/legal-notice/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "impressum/index.html"
+  },
+  {
+    "src": "en/privacy-policy/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "datenschutz/index.html"
+  },
+  {
+    "src": "en/services/analytics/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "leistungen/analyse/index.html"
+  },
+  {
+    "src": "en/services/branding/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "leistungen/branding/index.html"
+  },
+  {
+    "src": "en/services/custom-software/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "leistungen/individuelle-software/index.html"
+  },
+  {
+    "src": "en/services/seo-sea/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "leistungen/seo-sea/index.html"
+  },
+  {
+    "src": "en/services/social-media/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "leistungen/social-media/index.html"
+  },
+  {
+    "src": "en/services/website-ecommerce/index.html",
+    "lang": "en",
+    "home": false,
+    "alt": "leistungen/website-e-commerce/index.html"
+  },
+  {
+    "src": "impressum/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/legal-notice/index.html"
+  },
+  {
+    "src": "index.html",
+    "lang": "de",
+    "home": true,
+    "alt": "en/index.html"
+  },
+  {
+    "src": "kontakt/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/contact/index.html"
+  },
+  {
+    "src": "leistungen/analyse/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/services/analytics/index.html"
+  },
+  {
+    "src": "leistungen/branding/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/services/branding/index.html"
+  },
+  {
+    "src": "leistungen/individuelle-software/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/services/custom-software/index.html"
+  },
+  {
+    "src": "leistungen/seo-sea/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/services/seo-sea/index.html"
+  },
+  {
+    "src": "leistungen/social-media/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/services/social-media/index.html"
+  },
+  {
+    "src": "leistungen/website-e-commerce/index.html",
+    "lang": "de",
+    "home": false,
+    "alt": "en/services/website-ecommerce/index.html"
+  }
+]

@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 *.log
 tmp/
+.monomind/
 
 # Unredacted original (real customer names + personal email) — the
 # redacted copy used on the live site lives in site/assets/images/cleany/

@@ -1,0 +1,11 @@
+{
+  "name": "berlinwebs-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "BerlinWebs static site. No runtime dependencies — build.js uses only Node built-ins.",
+  "scripts": {
+    "build": "node build/build.js",
+    "build:check": "node build/build.js --check",
+    "dev": "python3 -m http.server 8000 --directory site"
+  }
+}
