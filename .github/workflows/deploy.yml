@@ -9,9 +9,14 @@ name: Build & Deploy
 # STRATO_SFTP_REMOTE_PATH before main ever points at the live one.
 on:
   push:
-    branches: [main]
+    # TEMP: feature/hero-illustration added only to test-fire the SFTP
+    # deploy against the scratch STRATO_SFTP_REMOTE_PATH before merging
+    # to main — see TODO in README, remove this branch once merged.
+    # (workflow_dispatch would be the cleaner way to do this, but GitHub
+    # only allows manually dispatching a workflow that's already
+    # registered on the default branch, which this isn't yet.)
+    branches: [main, feature/hero-illustration]
   pull_request:
-  workflow_dispatch:
 
 jobs:
   check:
@@ -22,7 +27,7 @@ jobs:
 
   deploy:
     needs: check
-    if: github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main' && github.event_name == 'push')
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
